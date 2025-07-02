@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col relative">
+    <div className="w-full min-h-screen flex flex-col relative font-worksans">
       {/* TOAST */}
         {toast.show && (
           <div className="fixed top-8 left-1/2 -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-xl shadow-2xl z-50 flex items-center gap-2 animate-fade-in transition-all duration-300">
