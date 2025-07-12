@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import mockData from './mockData.json';
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet"></link>
 
 function App() {
   // Table columns and data state
@@ -34,7 +35,7 @@ function App() {
 
   // Toast handler
   const handleClick = (label) => {
-    setToast({ show: true, message: `You clicked: ${label}` });
+    setToast({ show: true, message: `You have clicked : ${label}` });
     console.log(`You clicked: ${label}`);
     setTimeout(() => setToast({ show: false, message: '' }), 2000);
   };
@@ -211,8 +212,8 @@ function App() {
             {/* Custom top row for group headers */}
             <tr>
               <th className="bg-white border-b border-r border-gray-200"></th>
-              <th colSpan={4} className="bg-[#F8F8F8] border-b border-r border-gray-200 text-[#3D7FF6] font-semibold text-xs px-4 py-2 text-left">
-                <div className="flex items-center gap-2">
+              <th colSpan={4} className="bg-[#E2E2E2] border-b border-r border-gray-200 text-[#3D7FF6] font-semibold text-xs px-4 py-2 text-left">
+                <div className="flex items-center gap-2 bg-[#EEEEEE] w-fit px-2 py-1 rounded-[8px]">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
                     <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
@@ -222,56 +223,48 @@ function App() {
                 </div>
               </th>
               <th className="bg-white border-b border-r border-gray-200"></th>
-              <th className="bg-[#E8F5EF] border-b border-r border-gray-200 text-[#4B6A4F] font-semibold text-xs px-4 py-2 text-center">
+              <th className="bg-[#D2E0D4] border-b border-r border-gray-200 text-[#4B6A4F] font-semibold text-xs px-4 py-2 text-center">
                 <div className="flex items-center gap-1 justify-center">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  </svg>
+                  <img src='/image/Shape(4).png' height={20} width={20}/>
                   ABC
                   <span className="text-gray-400">...</span>
                 </div>
               </th>
-              <th colSpan={2} className="bg-[#F3F0FF] border-b border-r border-gray-200 text-[#8D7AE6] font-semibold text-xs px-4 py-2 text-center">
+              <th colSpan={2} className="bg-[#DCCFFC] border-b border-r border-gray-200 text-[#8D7AE6] font-semibold text-xs px-4 py-2 text-center ">
                 <div className="flex items-center gap-1 justify-center">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  </svg>
-                  Answer a question
+                  <img src='/image/Shape(1).png' height={20} width={20}/>
+                  <h3 className=''>Answer a question</h3>
                   <span className="text-gray-400">...</span>
                 </div>
               </th>
-              <th className="bg-[#FDEDEC] border-b border-r border-gray-200 text-[#F4978E] font-semibold text-xs px-4 py-2 text-center">
+              <th className="bg-[#FAC2AF] border-b border-r border-gray-200 text-[#F4978E] font-semibold text-xs px-4 py-2 text-center">
                 <div className="flex items-center gap-1 justify-center">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  </svg>
+                  <img src='/image/Shape(1).png' height={20} width={20}/>
                   Extract
                   <span className="text-gray-400">...</span>
                 </div>
               </th>
               {/* Plus above empty column */}
-              <th className="bg-white border-b border-gray-200 px-2 py-2 text-center flex items-center">
-                <button
-                  className="w-7 h-7 rounded-full bg-gray-100 border border-gray-300 text-xl font-bold text-gray-500 flex items-center justify-center hover:bg-gray-200"
-                  onClick={() => handleClick('Add Column')}
-                  title="Add Column"
-                >+</button>
+              <th className="bg-[#EEEEEE] border-b border-r border-gray-200 text-[#F4978E] font-semibold text-xs px-8 py-2 text-center">
+                <div className="flex items-center gap-1 justify-center">
+                  <img src='/image/Shape(3).png' height={40} width={40}/>
+                  
+                </div>
               </th>
             </tr>
             {/* Existing column headings */}
             <tr>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-gray-50">#</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-gray-50">Job Request</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-gray-50">Submitted</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-gray-50">Status</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-gray-50">Submitter</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-gray-50">URL</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-gray-50">Assigned</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-gray-50">Priority</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-gray-50">Due Date</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-gray-50">Est. Value</th>
-              {/* Extra empty header for the plus column */}
-              <th className="px-4 py-2 border-b border-gray-200 bg-gray-50"></th>
+              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">#</th>
+              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">Job Request</th>
+              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">Submitted</th>
+              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">Status</th>
+              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">Submitter</th>
+              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">URL</th>
+              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#E8F0E9]">Assigned</th>
+              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EAE3FC]">Priority</th>
+              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EAE3FC]">Due Date</th>
+              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#FFE9E0]">Est. Value</th>
+              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#FFFFFF]"></th>
             </tr>
           </thead>
           <tbody>
@@ -310,14 +303,14 @@ function App() {
                     {col.key === "priority" && (
                       <span
                         className={
-                          "px-3 py-1 rounded-full text-xs font-semibold  " +
+                          " text-xs font-semibold  " +
                           (row[col.key] === "High"
-                            ? "bg-red-100 text-red-700"
+                            ? " text-red-700"
                             : row[col.key] === "Medium"
-                            ? "bg-yellow-100 text-yellow-700"
+                            ? " text-yellow-700"
                             : row[col.key] === "Low"
-                            ? "bg-blue-100 text-blue-700"
-                            : "bg-gray-100 text-gray-700")
+                            ? " text-blue-700"
+                            : "text-gray-700")
                         }
                       >
                         {row[col.key]}
