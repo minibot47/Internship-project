@@ -212,57 +212,56 @@ function App() {
             {/* Custom top row for group headers */}
             <tr>
               <th className="bg-white border-b border-r border-gray-200"></th>
-              <th colSpan={4} className="bg-[#E2E2E2] border-b border-r border-gray-200 text-[#3D7FF6] font-semibold text-xs px-4 py-2 text-left">
+              <th colSpan={4} className="border-b bg-[#E2E2E2]  border-r border-gray-200 text-[#3D7FF6] font-semibold text-xs px-4 py-2 text-left ">
+                <div className='flex items-center gap-3'>
                 <div className="flex items-center gap-2 bg-[#EEEEEE] w-fit px-2 py-1 rounded-[8px]">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  </svg>
+                  <img src='/image/link.png' alt='link' width={20} onClick={() => handleClick('Link')}/>
                   Q3 Financial Overview
-                  <span className="text-[#E27D60] text-base">⭑</span>
+                  
+                </div>
+                <img src='/image/refresh.png' alt='Refresh' onClick={() => handleClick('Refresh')}/>
                 </div>
               </th>
               <th className="bg-white border-b border-r border-gray-200"></th>
               <th className="bg-[#D2E0D4] border-b border-r border-gray-200 text-[#4B6A4F] font-semibold text-xs px-4 py-2 text-center">
-                <div className="flex items-center gap-1 justify-center">
-                  <img src='/image/Shape(4).png' height={20} width={20}/>
+                <div className="flex items-center gap-2 justify-center">
+                  <img src='/image/Shape(4).png' height={18} width={18}/>
                   ABC
                   <span className="text-gray-400">...</span>
                 </div>
               </th>
               <th colSpan={2} className="bg-[#DCCFFC] border-b border-r border-gray-200 text-[#8D7AE6] font-semibold text-xs px-4 py-2 text-center ">
-                <div className="flex items-center gap-1 justify-center">
-                  <img src='/image/Shape(1).png' height={20} width={20}/>
+                <div className="flex items-center gap-2 justify-center">
+                  <img src='/image/Shape(1).png' height={18} width={18}/>
                   <h3 className=''>Answer a question</h3>
                   <span className="text-gray-400">...</span>
                 </div>
               </th>
               <th className="bg-[#FAC2AF] border-b border-r border-gray-200 text-[#F4978E] font-semibold text-xs px-4 py-2 text-center">
-                <div className="flex items-center gap-1 justify-center">
-                  <img src='/image/Shape(1).png' height={20} width={20}/>
+                <div className="flex items-center gap-2 justify-center">
+                  <img src='/image/Shape(1).png' height={18} width={18}/>
                   Extract
                   <span className="text-gray-400">...</span>
                 </div>
               </th>
               {/* Plus above empty column */}
-              <th className="bg-[#EEEEEE] border-b border-r border-gray-200 text-[#F4978E] font-semibold text-xs px-8 py-2 text-center">
+              <th className="bg-[#EEEEEE] border-b border-r border-gray-200 text-[#F4978E] font-semibold text-xs px-8 py-2 text-center" onClick={() => handleClick('Add New Column')}>
                 <div className="flex items-center gap-1 justify-center">
                   <img src='/image/Shape(3).png' height={40} width={40}/>
-                  
                 </div>
               </th>
             </tr>
             {/* Existing column headings */}
             <tr>
               <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">#</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">Job Request</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">Submitted</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">Status</th>
+              <th className="px-14 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">Job Request</th>
+              <th className="px-8 py-2 border-b border-r border-gray-200 text-center text-gray-500 font-medium bg-[#EEEEEE]">Submitted</th>
+              <th className="px-12 py-2 border-b border-r border-gray-200 text-center text-gray-500 font-medium bg-[#EEEEEE]">Status</th>
               <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">Submitter</th>
               <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EEEEEE]">URL</th>
               <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#E8F0E9]">Assigned</th>
               <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EAE3FC]">Priority</th>
-              <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EAE3FC]">Due Date</th>
+              <th className="px-12 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#EAE3FC]">Due Date</th>
               <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#FFE9E0]">Est. Value</th>
               <th className="px-4 py-2 border-b border-r border-gray-200 text-left text-gray-500 font-medium bg-[#FFFFFF]"></th>
             </tr>
@@ -276,40 +275,42 @@ function App() {
                     key={col.key}
                     className={
                       (col.key === "url" ? "w-32 " : "") +
+                      (col.key === "status" ? "text-center " : "") +
                       "px-4 py-2 border-b border-r border-gray-200 cursor-pointer"
                     }
                     onClick={() => handleClick(`${col.label} cell row ${idx + 1}`)}
                   >
                     {/* Status pill */}
                     {col.key === "status" && (
-                      <span
-                        className={
-                          "px-3 py-1 rounded-full text-xs font-semibold text-center flex items-center  " +
-                          (row[col.key] === "In-process"
-                            ? "bg-[#FFF3D6] text-[#85640B]"
-                            : row[col.key] === "Complete"
-                            ? "bg-[#D3F2E3] text-[#0A6E3D]"
-                            : row[col.key] === "Blocked"
-                            ? "bg-[#FFE1DE] text-[#C22219]"
-                            : row[col.key] === "Need to start"
-                            ? "bg-[#E2E8F0] text-[#475569]"
-                            : "bg-gray-100 text-gray-800")
-                        }
-                      >
-                        {row[col.key]}
-                      </span>
+                    <span
+                      className={
+                        "w-full px-2 py-2 rounded-full text-xs font-semibold flex items-center justify-center mx-auto " +
+                        (row[col.key] === "In-process"
+                          ? "bg-[#FFF3D6] text-[#85640B]"
+                          : row[col.key] === "Complete"
+                          ? "bg-[#D3F2E3] text-[#0A6E3D]"
+                          : row[col.key] === "Blocked"
+                          ? "bg-[#FFE1DE] text-[#C22219]"
+                          : row[col.key] === "Need to start"
+                          ? "bg-[#E2E8F0] text-[#475569]"
+                          : "bg-gray-100 text-gray-800")
+                      }
+                    >
+                      {row[col.key]}
+                    </span>
                     )}
+                    
                     {/* Priority pill */}
                     {col.key === "priority" && (
                       <span
                         className={
-                          " text-xs font-semibold  " +
+                          " text-xs font-semibold text-center items-center justify-center flex  " +
                           (row[col.key] === "High"
-                            ? " text-red-700"
+                            ? " text-[#EF4D44]"
                             : row[col.key] === "Medium"
-                            ? " text-yellow-700"
+                            ? " text-[#C29210]"
                             : row[col.key] === "Low"
-                            ? " text-blue-700"
+                            ? " text-[#1A8CFF]"
                             : "text-gray-700")
                         }
                       >
